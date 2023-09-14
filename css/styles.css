@@ -468,6 +468,12 @@ font-style: normal;
     fill: #f4f4fd
 }
 
+/* Telegram subscribe form */
+
+.teleg-subscribe-form{
+    display: flex;
+    gap: 24px;
+}
 .teleg-subscribe-title {
     color: var(--WHITE, #FFF);
     font-size: 16px;
@@ -485,13 +491,15 @@ font-style: normal;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     outline: transparent;
     padding: 8px 16px;
-    background-color: var(--navy-blue);
+    background-color: transparent;
 
     color: var(--WHITE, #FFF);
     font-size: 12px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1.5;
     letter-spacing: 0.04em;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     
 }
 .teleg-subscribe-input::placeholder {
@@ -505,10 +513,10 @@ font-style: normal;
     margin-right: 23px;
 }
 .teleg-subscribe-btn {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     border: none;
     border-radius: 4px;
@@ -521,6 +529,13 @@ font-style: normal;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
+
+    transition: background-color cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.teleg-subscribe-btn:hover,
+.teleg-subscribe-btn:focus {
+    background-color: var(--OCEAN);
 }
 .teleg-subscribe-btn-icon {
     margin-left: 16px;
@@ -541,7 +556,7 @@ font-style: normal;
     visibility: hidden;
     pointer-events: none;
 
-    transition: opacity 500ms linear, visibility 500ms linear;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open {
     opacity: 1;
@@ -556,11 +571,18 @@ font-style: normal;
     transform: translate(-50% , -50%);
     width: 408px;
     min-height: 584px;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     border-radius: 4px;
     background: var(--dairy);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -571,17 +593,16 @@ font-style: normal;
     line-height: 0;
     padding: 0;
     background-color: #E7E9FC;
-    transition: background-color cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn-icon {
-    /* width: 8px;
-    height: 8px; */
     fill: var(--navy-blue);
-    transition: fill cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn:hover,
 .close-btn:focus {
+    border: none;
     background-color: var(--OCEAN);
 }
 .close-btn:hover .close-btn-icon,
@@ -590,7 +611,7 @@ font-style: normal;
 }
 
 .modal-text {
-    margin-top: 48px;
+    /* margin-top: 48px; */
     margin-bottom: 16px;
     color: var(--navy-blue);
     text-align: center;
@@ -619,6 +640,8 @@ font-style: normal;
     border-radius: 4px;
     border: 1px solid var(--navy-blue-modal);
     padding: 0 0 0 38px;
+    background-color: transparent;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .review-form-input:focus {
@@ -640,6 +663,9 @@ font-style: normal;
 .review-form-input:focus + .review-form-icon{
     fill: var(--IRIS);
 }
+.review-form-textarea-wrapper {
+    margin-bottom: 16px;
+}
 .textarea-field {
     resize: none;
     width: 100%;
@@ -648,11 +674,13 @@ font-style: normal;
     border-radius: 4px;
     border: 1px solid var(--navy-blue-modal);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: 16px;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    outline: transparent;
 }
 
 .textarea-field::placeholder {
@@ -688,20 +716,22 @@ font-style: normal;
     border-radius: 2px;
     cursor: pointer;
     fill: transparent;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .review-form-checkbox:checked +.user-privacy-label>.review-form-checkboks-imit {
     background-color: var(--OCEAN);
     fill: var(--CLOUD);
+    border: none;
 }
 .review-form-checkbox:focus+.user-privacy-label>.review-form-checkboks-imit {
     outline: 1px solid var(--OCEAN);
 }
 
 .review-form-submit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    /* align-items: center;
+    justify-content: center; */
 
     min-width: 169px;
     padding: 16px 32px;
