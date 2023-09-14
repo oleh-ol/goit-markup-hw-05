@@ -64,7 +64,7 @@
     </header>
 
     <main>
-      <!-- Секція з кнопкою -->
+      <!-- Hero section -->
 
       <section class="hero-section">
         <div class="container">
@@ -77,7 +77,7 @@
         </div>
       </section>
 
-      <!-- секція features -->
+      <!-- Features section -->
 
       <section class="features-section">
         <div class="container">
@@ -135,7 +135,7 @@
         </div>
       </section>
 
-      <!-- секція Our Team -->
+      <!-- Our Team section -->
 
       <section class="team-section">
         <div class="container">
@@ -375,7 +375,9 @@
           </ul>
         </div>
       </section>
+
       <!-- Portfolio section -->
+
       <section class="portfolio-section">
         <div class="container">
           <h2 class="portfolio-section-title">Our Portfolio</h2>
@@ -504,6 +506,8 @@
       </section>
     </main>
 
+    <!-- Footer -->
+
     <footer class="footer-section">
       <div class="container">
         <div class="footer-logo-container">
@@ -515,6 +519,7 @@
             digital marketing & growth solutions.
           </p>
         </div>
+
         <div class="footer-social-container">
           <p class="footer-social-title">Social media</p>
           <ul class="footer-social-list list">
@@ -564,7 +569,144 @@
             </li>
           </ul>
         </div>
+
+        <div class="teleg-subscribe">
+          <p class="teleg-subscribe-title">Subscribe</p>
+          <form>
+            <label class="teleg-subscribe-label">
+              <input
+                class="teleg-subscribe-input"
+                type="email"
+                name="teleg-subscribe-label"
+                placeholder="E-mail"
+              />
+            </label>
+            <button class="teleg-subscribe-btn" type="submit">
+              Subscribe
+              <svg class="teleg-subscribe-btn-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-telegram"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
+    <!-- Modal section -->
+
+    <div class="backdrop isopen">
+      <div class="modal">
+        <button class="close-btn">
+          <svg
+            class="close-btn-icon"
+            width="8"
+            height="8"
+            aria-label="modal close icon"
+          >
+            <use href="./images/icons.svg#icon-close-black"></use>
+          </svg>
+        </button>
+        <p class="modal-text">Leave your contacts and we will call you back</p>
+        <form class="review-form">
+          <div class="review-form-field-wrapper">
+            <label class="review-form-label" for="user-name">Name</label>
+
+            <div class="review-form-input-wrapper">
+              <input
+                type="text"
+                class="review-form-input"
+                id="user-name"
+                name="user-name"
+              />
+              <svg
+                class="review-form-icon"
+                width="18"
+                height="18"
+                aria-label="user-icon"
+              >
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="review-form-field-wrapper">
+            <label class="review-form-label" for="user-phone">Phone</label>
+            <div class="review-form-input-wrapper">
+              <input
+                type="tel"
+                class="review-form-input"
+                id="user-phone"
+                name="user-phone"
+              />
+              <svg
+                class="review-form-icon"
+                width="18"
+                height="24"
+                aria-label="phone-icon"
+              >
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="review-form-field-wrapper">
+            <label class="review-form-label" for="user-email">Email</label>
+            <div class="review-form-input-wrapper">
+              <input
+                type="email"
+                class="review-form-input"
+                id="user-email"
+                name="user-email"
+              />
+              <svg
+                class="review-form-icon"
+                width="18"
+                height="24"
+                aria-label="email-icon"
+              >
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="review-form-textarea-wrapper">
+            <label class="review-form-label" for="text-input">Comment</label>
+            <textarea
+              class="textarea-field"
+              name="text-input"
+              id="text-input"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+
+          <div class="review-form-checkbox-wrapper">
+            <input
+              class="review-form-checkbox visually-hidden"
+              type="checkbox"
+              id="user-privacy"
+              name="user-privacy"
+              value="true"
+              required
+            />
+            <label class="user-privacy-label" for="user-privacy">
+              <span class="review-form-checkboks-imit">
+                <svg
+                  class="checkbox-icon"
+                  href="./images/icons.svg#icon-check"
+                  width="10"
+                  height="10"
+                ></svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="review-form-privacy-link" href=""
+                >Privacy Policy</a
+              ></label
+            >
+          </div>
+
+          <button class="review-form-submit" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
