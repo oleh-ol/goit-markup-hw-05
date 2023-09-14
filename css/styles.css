@@ -6,6 +6,7 @@
     --IRIS: #4D5AE5;
     --OCEAN: #404BBF;
     --WHITE: #ffffff;
+    --CLOUD: #F4F4FD
 }
 
 body {
@@ -678,22 +679,23 @@ font-style: normal;
     color: var(--IRIS);
 }
 .review-form-checkboks-imit {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 16px;
     border: 1px solid var(--navy-blue-modal);
     border-radius: 2px;
     cursor: pointer;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.review-form-checkbox:checked + .user-privacy-label > .review-form-checkboks-imit {
+.review-form-checkbox:checked +.user-privacy-label>.review-form-checkboks-imit {
     background-color: var(--OCEAN);
-    fill: f4f4fd;
+    fill: var(--CLOUD);
 }
 .review-form-checkbox:focus+.user-privacy-label>.review-form-checkboks-imit {
     outline: 1px solid var(--OCEAN);
-}
-.checkbox-icon {
-    /* fill: black; */
 }
 
 .review-form-submit {
